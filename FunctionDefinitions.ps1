@@ -122,6 +122,13 @@
     (func advapi32 RevertToSelf ([bool]) @(
         # No Parameters
     ) -EntryPoint RevertToSelf -SetLastError),
+
+    (func advapi32 RegLoadKeyW ([IntPtr]) @(
+        [IntPtr],             #_in_      HKEY      hKey,
+        [string],             #_In_      LPCWSTR  lpSubKey,
+        [string]              #_In_      LPCWSTR  lpFile
+    ) -EntryPoint RegLoadKeyW),
+
     #endregion advapi32
     #region amsi
     (func amsi AmsiInitialize ([UInt32]) @(
@@ -639,6 +646,8 @@
         $OBJECT_ATTRIBUTES.MakeByRefType()  #_In_  POBJECT_ATTRIBUTES ObjectAttributes
     ) -EntryPoint NtOpenKey),
 
+   
+    
     (func ntdll NtQueryEaFile ([UInt32]) @(
         [IntPtr],                         #_In_     HANDLE           FileHandle
         $IO_STATUS_BLOCK.MakeByRefType(), #_Out_    PIO_STATUS_BLOCK IoStatusBlock

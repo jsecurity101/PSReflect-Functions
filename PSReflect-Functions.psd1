@@ -186,6 +186,7 @@ FunctionsToExport = @(
     'QueryFullProcessImageName',
     'ReadProcessMemory',
     'ResumeThread',
+    'RegLoadKeyW',
     'RevertToSelf',
     'RtlAdjustPrivilege',
     'RtlGetFunctionTableListHead',
